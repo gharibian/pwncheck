@@ -1,0 +1,7 @@
+catch
+pwncheck
+pwncheck_test
+main
+*.o
+pwned-passwords-sha1-ordered-by-hash-v7.*
+.*.swp
