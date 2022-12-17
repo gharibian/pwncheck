@@ -8,6 +8,7 @@ SOURCES := \
 
 OBJECTS := $(SOURCES:.cc=.o)
 
+CXXFLAGS := -O2
 LDLIBS := -lmd
 
 PASSWORDS := pwned-passwords-sha1-ordered-by-hash-v7
