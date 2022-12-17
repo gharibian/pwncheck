@@ -48,7 +48,7 @@ test: $(TEST_TARGET)
 	time -p ./$(TEST_TARGET)
 
 example_run: $(MAIN_TARGET) $(PASSWORDS).txt
-	time -p ./$(MAIN_TARGET) $(PASSWORDS).txt p4ssw0rd test
+	time -p ./$(MAIN_TARGET) $(PASSWORDS).txt p4ssw0rd p4ssw0rd p4ssw0rd test
 
 format:
 	clang-format -i $(HEADERS) $(ALL_SOURCES)
