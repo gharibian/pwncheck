@@ -1,3 +1,4 @@
+#include <chrono>
 #include <iostream>
 
 #include "pwncheck.hh"
@@ -18,9 +19,15 @@ auto main(int argc, char *argv[]) -> int {
   for (int i = 2; i < argc; i++) {
     std::string val = argv[i];
     std::string hash = SHA1(val);
-    int cnt = ssha1.ValCount(val);
+    auto start = std::chrono::high_resolution_clock::now();
+    int cnt = ssha1.HashCount(hash);
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto dur =
+        std::chrono::duration_cast<std::chrono::microseconds>(stop - start)
+            .count();
 
-    std::cout << val << " : " << hash << " : " << cnt << std::endl;
+    std::cout << val << " : " << hash << " : " << cnt << " : " << dur << " us"
+              << std::endl;
 
     if (cnt > 0) {
       found = true;
