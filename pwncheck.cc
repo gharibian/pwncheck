@@ -61,8 +61,8 @@ SortedSHA1Search::~SortedSHA1Search() {
   _addr = nullptr;
 }
 
-auto SortedSHA1Search::HashCount(const std::string &val, size_t low, size_t high)
-    -> int {
+auto SortedSHA1Search::HashCount(const std::string &val, size_t low,
+                                 size_t high) -> int {
   if (high < low || (high - low) < SHA1_DIGEST_STRING_LENGTH) {
     return 0;
   }
